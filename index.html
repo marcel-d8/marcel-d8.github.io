@@ -27,15 +27,16 @@
     }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Preload to prevent layout shift -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body class="font-inter">
+<body style="font-family: 'Inter', sans-serif;">
 
   <!-- Main Container -->
   <section class="bg-piyonna-red flex flex-col items-center gap-3 px-6 pt-16 pb-14">
@@ -53,7 +54,7 @@
     </div>
 
     <!-- Description -->
-    <p class="text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] text-center">
+    <p class="text-white text-[16px] font-semibold leading-[1.375] tracking-[-0.32px] text-center">
       The new way to experience authentic<br>
       K-Beauty starts here.<br>
       K-Beauty proven in global markets<br>
@@ -71,7 +72,7 @@
       <p class="text-[20px] font-semibold leading-[1.2] tracking-[-0.4px] opacity-80">
         PIYONNA
       </p>
-      <h2 class="text-[32px] font-bold leading-[1.2] tracking-[-0.64px] font-sf-pro">
+      <h2 class="text-[32px] h-[38px] font-bold leading-[1.2] tracking-[-0.64px] font-sf-pro">
         Open Countdown
       </h2>
     </div>
@@ -118,7 +119,7 @@
         <p class="text-[20px] font-semibold leading-[1.2] tracking-[-0.4px] opacity-80">
           For Early Subscribers
         </p>
-        <h2 class="text-[32px] font-bold leading-[1.2] tracking-[-0.64px] font-sf-pro">
+        <h2 class="text-[32px] h-[38px] font-bold leading-[1.2] tracking-[-0.64px] font-sf-pro">
           Discount Code
         </h2>
       </div>
@@ -137,7 +138,7 @@
       </div>
 
       <!-- Description -->
-      <p class="text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] text-center">
+      <p class="text-white text-[16px] font-semibold leading-[1.375] tracking-[-0.32px] text-center">
         To celebrate our launch, we're sending<br>
         something special to our subscribers.<br>
         Be the first to receive PIYONNA's welcome<br>
@@ -154,7 +155,7 @@
         name="email"
         placeholder="Enter your email address"
         required
-        class="w-full px-5 py-[14px] bg-white/10 border border-white rounded-full text-white text-[15px] font-medium leading-[1.4] tracking-[-0.3px] placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+        class="w-full h-[49px] px-5 py-[14px] bg-white/10 border border-white rounded-full text-white text-[15px] font-medium leading-[1.4] tracking-[-0.3px] placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
       >
 
       <!-- Checkbox -->
@@ -174,7 +175,7 @@
       <!-- Submit Button -->
       <button
         type="submit"
-        class="w-full flex items-center justify-center gap-2 px-6 py-[14px] bg-piyonna-button rounded-full text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] hover:bg-piyonna-button/90 transition-colors whitespace-nowrap"
+        class="w-full h-[50px] flex items-center justify-center gap-2 px-6 py-[14px] bg-piyonna-button rounded-full text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] hover:bg-piyonna-button/90 transition-colors whitespace-nowrap"
       >
         <span>Get the discount code</span>
         <img src="assets/arrow-right.svg" alt="" class="w-5 h-5">

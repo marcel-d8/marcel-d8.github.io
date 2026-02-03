@@ -5,7 +5,7 @@
 // ============================================
 
 // Target date - HARD CODED (change this to your launch date)
-const TARGET_DATE = new Date('2025-03-01T00:00:00');
+const TARGET_DATE = new Date('2026-02-28T00:00:00');
 
 function updateCountdown() {
   const now = new Date();

@@ -1,3 +1,5 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 6.95082 12.1339" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Shape" fill-rule="evenodd" clip-rule="evenodd" d="M6.06694 0L6.95082 0.883883L1.76777 6.06694L6.95082 11.25L6.06694 12.1339L0 6.06694L6.06694 0Z" fill="var(--fill-0, white)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M7.94185 3.93311L7.05796 4.81699L12.241 10L7.05796 15.1831L7.94185 16.067L14.0088 10L7.94185 3.93311Z"
+    fill="white" />
 </svg>
