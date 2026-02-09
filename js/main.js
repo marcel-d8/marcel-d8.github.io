@@ -36,67 +36,61 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // ============================================
+// KLAVIYO CONFIGURATION
+// ============================================
+
+const KLAVIYO_PUBLIC_KEY = 'Rgku2X';
+const KLAVIYO_LIST_ID = 'X9YUF8';
+
+// ============================================
 // EMAIL FORM HANDLING
 // ============================================
 
 const form = document.getElementById('email-form');
 const emailInput = document.getElementById('email');
 const agreeCheckbox = document.getElementById('agree');
+const submitButton = form.querySelector('button[type="submit"]');
+
+// ============================================
+// BUTTON ACTIVATION LOGIC
+// ============================================
+
+function updateButtonState() {
+  const isEmailValid = isValidEmail(emailInput.value.trim());
+  const isAgreed = agreeCheckbox.checked;
+  submitButton.disabled = !(isEmailValid && isAgreed);
+}
+
+emailInput.addEventListener('input', updateButtonState);
+agreeCheckbox.addEventListener('change', updateButtonState);
 
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
 
   const email = emailInput.value.trim();
-  const agreed = agreeCheckbox.checked;
 
-  // Basic validation
-  if (!email) {
-    alert('Please enter your email address.');
-    return;
-  }
-
-  if (!isValidEmail(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  if (!agreed) {
-    alert('Please agree to receive updates.');
-    return;
-  }
-
-  // Fake HTTP request (mock API call)
-  console.log('=== MOCK API REQUEST ===');
-  console.log('Endpoint: POST /api/subscribe');
-  console.log('Payload:', {
-    email: email,
-    agreed: agreed,
-    timestamp: new Date().toISOString()
-  });
-
-  // Simulate network delay
-  const submitButton = form.querySelector('button[type="submit"]');
+  // Disable button and show loading state
   const originalText = submitButton.innerHTML;
   submitButton.disabled = true;
   submitButton.innerHTML = '<span>Submitting...</span>';
 
   try {
-    // Simulate API call with delay
-    await mockApiCall({ email, agreed });
+    const success = await subscribeToKlaviyo(email);
 
-    console.log('Response: 200 OK');
-    console.log('=== END MOCK REQUEST ===');
-
-    // Success feedback
-    alert('Thank you for subscribing! Check your email for the discount code.');
-    form.reset();
+    if (success) {
+      alert('Thank you for subscribing! Check your email for the discount code.');
+      form.reset();
+      updateButtonState();
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
 
   } catch (error) {
-    console.error('Mock API Error:', error);
+    console.error('Klaviyo API Error:', error);
     alert('Something went wrong. Please try again.');
   } finally {
-    submitButton.disabled = false;
     submitButton.innerHTML = originalText;
+    updateButtonState();
   }
 });
 
@@ -106,13 +100,52 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-// Mock API call function
-function mockApiCall(data) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true, message: 'Subscription successful' });
-    }, 1000); // 1 second delay to simulate network
-  });
+// Klaviyo Client Subscription API
+async function subscribeToKlaviyo(email) {
+  const requestBody = {
+    data: {
+      type: 'subscription',
+      attributes: {
+        profile: {
+          data: {
+            type: 'profile',
+            attributes: { email: email }
+          }
+        },
+        custom_source: 'PIYONNA Teasing Page'
+      },
+      relationships: {
+        list: {
+          data: {
+            type: 'list',
+            id: KLAVIYO_LIST_ID
+          }
+        }
+      }
+    }
+  };
+
+  console.log('Request Body:', JSON.stringify(requestBody, null, 2));
+
+  const response = await fetch(
+    `https://a.klaviyo.com/client/subscriptions?company_id=${KLAVIYO_PUBLIC_KEY}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/vnd.api+json',
+        'revision': '2024-10-15'
+      },
+      body: JSON.stringify(requestBody)
+    }
+  );
+
+  // 에러 응답 확인
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Klaviyo Error Response:', errorText);
+  }
+
+  return response.ok;
 }
 
 // ============================================
