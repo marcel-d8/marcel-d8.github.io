@@ -30,15 +30,15 @@ body {
 
 /* Custom checkbox checked state */
 input[type="checkbox"]:checked {
-  background-color: #bf57ed;
-  border-color: #bf57ed;
+  background-color: #121212;
+  border-color: #121212;
 }
 
 /* Focus styles for accessibility */
 input:focus,
 button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(18, 18, 18, 0.2);
 }
 
 /* Prevent text selection on timer numbers */
@@ -48,14 +48,12 @@ button:focus {
 
 /* Mobile-first responsive adjustments */
 @media (min-width: 768px) {
-  /* Center content on larger screens */
   section {
     max-width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
-  /* Desktop: full width sections */
   section {
     width: 100%;
   }
@@ -79,7 +77,7 @@ button:focus {
 /* Button hover effect */
 button[type="submit"]:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(191, 87, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(18, 18, 18, 0.3);
 }
 
 button[type="submit"]:active:not(:disabled) {
@@ -88,7 +86,7 @@ button[type="submit"]:active:not(:disabled) {
 
 /* Loading state for button */
 button[type="submit"]:disabled {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
