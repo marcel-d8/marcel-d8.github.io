@@ -46,20 +46,20 @@
   <!-- Figma: top strip 101px + content area 1156px = 1257px total -->
   <div class="relative w-full overflow-hidden" style="height: 1257px;">
 
-    <!-- Layer 1: Hero Photo (0–599px visible) — progressive loading: sm first, then lg -->
+    <!-- Layer 1: Hero Photo (0–599px: top strip 101px + content area 498px) -->
     <img
       id="hero-banner"
       src="assets/piyonna_banner_desktop_sm.jpg"
       alt=""
       class="absolute top-0 left-0 w-full transition-opacity duration-500"
-      style="width: 100vw; height: 498px; object-fit: cover; object-position: center top;"
+      style="width: 100vw; height: 599px; object-fit: cover; object-position: center top;"
     >
 
     <!-- Layer 2: Coral Gradient over hero (101–612px, 511px tall) -->
-    <div class="absolute left-0 w-full" style="top: 101px; height: 511px; background: linear-gradient(to bottom, transparent 45.67%, #ff5d42);"></div>
+    <div class="absolute left-0 w-full" style="top: 101px; height: 511px; background: linear-gradient(to bottom, transparent 45.673%, #ff5d42);"></div>
 
     <!-- Layer 3: Flipped Coral Gradient fading to white (598–1126px, 528px tall) -->
-    <div class="absolute left-0 w-full" style="top: 598px; height: 528px; background: linear-gradient(to bottom, #ff5d42, transparent 87%);"></div>
+    <div class="absolute left-0 w-full" style="top: 598px; height: 528px; background: linear-gradient(to bottom, #ff5d42 0.03%, transparent 87.253%);"></div>
 
     <!-- Layer 4: White background for bottom area (1126–1257px) -->
     <div class="absolute left-0 w-full bg-white" style="top: 1126px; bottom: 0;"></div>
