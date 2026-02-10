@@ -80,15 +80,15 @@ form.addEventListener('submit', async function(e) {
 
     if (success) {
       showPopup('Verify your email for', '30% OFF on launch day');
-      // form.reset();
-      // updateButtonState();
+      form.reset();
+      updateButtonState();
     } else {
-      showPopup('Oops!', 'Something went wrong. Please try again.');
+      // showPopup('Oops!', 'Something went wrong. Please try again.');
     }
 
   } catch (error) {
     console.error('Klaviyo API Error:', error);
-    showPopup('Oops!', 'Something went wrong. Please try again.');
+    // showPopup('Oops!', 'Something went wrong. Please try again.');
   } finally {
     submitButton.innerHTML = originalText;
     updateButtonState();
