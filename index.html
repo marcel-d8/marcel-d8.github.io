@@ -42,54 +42,56 @@
 </head>
 <body class="font-inter bg-white overflow-x-hidden">
 
-  <!-- ===== HERO + BRAND + GET READY (Absolute Positioned Container) ===== -->
-  <!-- Figma: top strip 101px + content area 1156px = 1257px total -->
-  <div class="relative w-full overflow-hidden" style="height: 1257px;">
-
-    <!-- Layer 1: Hero Photo (0–599px: top strip 101px + content area 498px) -->
+  <!-- ===== HERO SECTION ===== -->
+  <header class="relative overflow-hidden">
+    <!-- Hero Photo (block flow — determines section height naturally) -->
     <img
       id="hero-banner"
       src="assets/piyonna_banner_mobile_sm.jpg"
       alt=""
-      class="absolute top-0 left-0 w-full transition-opacity duration-500"
-      style="width: 100vw; height: auto; object-fit: cover; object-position: center top;"
+      class="block w-full"
     >
 
-    <!-- Layer 2: Coral Gradient over hero (101–612px, 511px tall) -->
-    <div class="absolute left-0 w-full" style="top: 101px; height: 511px; background: linear-gradient(to bottom, transparent 45.673%, #ff5d42);"></div>
+    <!-- Purple vignette overlay (absolute) -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      linear-gradient(to bottom, #e7b0ff 0%, transparent 12%),
+      linear-gradient(to right, #e7b0ff 0%, transparent 12%),
+      linear-gradient(to left, #e7b0ff 0%, transparent 12%);
+    "></div>
 
-    <!-- Layer 3: Flipped Coral Gradient fading to white (598–1126px, 528px tall) -->
-    <div class="absolute left-0 w-full" style="top: 598px; height: 528px; background: linear-gradient(to bottom, #ff5d42 0.03%, transparent 87.253%);"></div>
+    <!-- Coral gradient overlay — bottom portion of hero (absolute) -->
+    <div class="absolute bottom-0 left-0 w-full" style="height: 65%; background: linear-gradient(to bottom, transparent 30%, #ff5d42);"></div>
 
-    <!-- Layer 4: White background for bottom area (1126–1257px) -->
-    <div class="absolute left-0 w-full bg-white" style="top: 1126px; bottom: 0;"></div>
-
-    <!-- Nav: Piyonna Symbol (top-left) -->
+    <!-- Nav: Piyonna Symbol (absolute) -->
     <div class="absolute top-[29px] left-4 z-10">
       <img src="assets/piyonna-symbol-top.svg" alt="Piyonna" class="w-12 h-[50px]">
     </div>
 
-    <!-- Nav: KR Badge (top-right) -->
+    <!-- Nav: KR Badge (absolute) -->
     <div class="absolute top-[29px] right-6 z-10">
       <img src="assets/hamburger-menu.svg" alt="KR" class="w-6 h-6">
     </div>
 
-    <!-- Decorative Symbol: Left (content-area top-279 = page top-380) -->
-    <img src="assets/piyonna-symbol.svg" alt="" class="absolute top-[380px] left-[4.27%] w-[48px] h-[50px]">
+    <!-- Decorative Symbol: Left (absolute) -->
+    <img src="assets/piyonna-symbol.svg" alt="" class="absolute w-[48px] h-[50px]" style="top: 76%; left: 4.27%;">
 
-    <!-- Decorative Symbol: Right (content-area top-382 = page top-483) -->
-    <img src="assets/piyonna-symbol.svg" alt="" class="absolute top-[483px] left-[79.47%] w-[48px] h-[50px]">
+    <!-- Decorative Symbol: Right (absolute) -->
+    <img src="assets/piyonna-symbol.svg" alt="" class="absolute w-[48px] h-[50px]" style="top: 91%; left: 79.47%;">
+  </header>
 
-    <!-- Logo: Left-aligned (content-area top-425 = page top-526) -->
-    <img src="assets/piyonna-logo.svg" alt="Piyonna" class="absolute top-[526px] left-0 right-0 w-[323px] h-[86px] mx-auto">
+  <!-- ===== BRAND + GET READY (block flow, coral gradient background) ===== -->
+  <section class="flex flex-col items-center text-center" style="background: linear-gradient(to bottom, #ff5d42 0%, transparent 85%);">
 
-    <!-- Tagline (content-area top-519 = page top-620) -->
-    <p class="absolute top-[620px] left-0 w-full text-white text-[24px] font-bold leading-[1.25] text-center">
+    <!-- Logo -->
+    <img src="assets/piyonna-logo.svg" alt="Piyonna" class="w-[323px] h-[86px] mt-7">
+
+    <!-- Tagline -->
+    <p class="text-white text-[24px] font-bold leading-[1.25] mt-2">
       <span class="text-[#fdfbe0]">K-BEAUTY</span> FROM KOREA
     </p>
 
-    <!-- Description (content-area top-569 = page top-670) -->
-    <p class="absolute top-[670px] left-0 w-full text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] text-center px-6">
+    <!-- Description -->
+    <p class="text-white text-[16px] font-semibold leading-[1.4] tracking-[-0.32px] px-6 mt-5">
       The new way to experience authentic<br>
       K-Beauty starts here.<br>
       K-Beauty proven in global markets<br>
@@ -97,8 +99,8 @@
       reviews and price comparison.
     </p>
 
-    <!-- Get Ready Section (content-area top-777 = page top-878, centered) -->
-    <div class="absolute top-[878px] left-0 w-full flex flex-col items-center gap-6 px-7">
+    <!-- Get Ready -->
+    <div class="flex flex-col items-center gap-6 px-7 mt-24">
       <img src="assets/piyonna-symbol.svg" alt="" class="w-[25px] h-[26px]">
       <div class="text-red-700 text-[36px] leading-[42px] tracking-[-0.72px] text-center">
         <p class="font-light">Get ready</p>
@@ -108,11 +110,11 @@
       <img src="assets/piyonna-symbol.svg" alt="" class="w-[25px] h-[26px]">
     </div>
 
-    <!-- Launching Soon (content-area top-1043 = page top-1144) -->
-    <p class="absolute top-[1144px] left-0 w-full text-coral-700 text-[20px] italic leading-[42px] tracking-[-0.4px] text-center">
+    <!-- Launching Soon -->
+    <p class="text-coral-700 text-[20px] italic leading-[42px] tracking-[-0.4px] pt-10 pb-8">
       Launching Soon
     </p>
-  </div>
+  </section>
 
   <!-- ===== COUNTDOWN ===== -->
   <section class="relative flex flex-col items-center gap-4 px-6 pt-12 pb-16 text-countdown-text text-center overflow-hidden" style="background: linear-gradient(to bottom, transparent, #f7e5ff)">
