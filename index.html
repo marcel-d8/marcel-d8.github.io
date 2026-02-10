@@ -49,10 +49,10 @@
     <!-- Layer 1: Hero Photo (0–599px visible) — progressive loading: sm first, then lg -->
     <img
       id="hero-banner"
-      src="assets/piyonna_banner_mobile_sm.png"
+      src="assets/piyonna_banner_desktop_sm.jpg"
       alt=""
       class="absolute top-0 left-0 w-full transition-opacity duration-500"
-      style="height: 599px; object-fit: cover; object-position: center top;"
+      style="width: 100vw; height: 498px; object-fit: cover; object-position: center top;"
     >
 
     <!-- Layer 2: Coral Gradient over hero (101–612px, 511px tall) -->
@@ -81,7 +81,7 @@
     <img src="assets/piyonna-symbol.svg" alt="" class="absolute top-[483px] left-[79.47%] w-[48px] h-[50px]">
 
     <!-- Logo: Left-aligned (content-area top-425 = page top-526) -->
-    <img src="assets/piyonna-logo.svg" alt="Piyonna" class="absolute top-[526px] left-[26px] w-[323px] h-[86px]">
+    <img src="assets/piyonna-logo.svg" alt="Piyonna" class="absolute top-[526px] left-0 right-0 w-[323px] h-[86px] mx-auto">
 
     <!-- Tagline (content-area top-519 = page top-620) -->
     <p class="absolute top-[620px] left-0 w-full text-white text-[24px] font-bold leading-[1.25] text-center">
@@ -242,7 +242,7 @@
       lg.onload = function() {
         hero.src = lg.src;
       };
-      lg.src = 'assets/piyonna_banner_mobile_lg.png';
+      lg.src = 'assets/piyonna_banner_desktop_lg.jpg';
     })();
   </script>
 
