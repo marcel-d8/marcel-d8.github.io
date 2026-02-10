@@ -49,10 +49,10 @@
     <!-- Layer 1: Hero Photo (0–599px: top strip 101px + content area 498px) -->
     <img
       id="hero-banner"
-      src="assets/piyonna_banner_desktop_sm.jpg"
+      src="assets/piyonna_banner_mobile_sm.jpg"
       alt=""
       class="absolute top-0 left-0 w-full transition-opacity duration-500"
-      style="width: 100vw; height: 599px; object-fit: cover; object-position: center top;"
+      style="width: 100vw; height: auto; object-fit: cover; object-position: center top;"
     >
 
     <!-- Layer 2: Coral Gradient over hero (101–612px, 511px tall) -->
@@ -242,7 +242,7 @@
       lg.onload = function() {
         hero.src = lg.src;
       };
-      lg.src = 'assets/piyonna_banner_desktop_lg.jpg';
+      lg.src = 'assets/piyonna_banner_mobile_lg.jpg';
     })();
   </script>
 
