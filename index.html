@@ -42,17 +42,17 @@
 </head>
 <body class="font-inter bg-white overflow-x-hidden">
   <picture class="section-1">
-    <source media="(min-width: 640px)" srcset="assets/desktop_1_sm.jpg">
-    <img src="assets/mobile_1_sm.jpg" alt="" class="w-full">
+    <source media="(min-width: 640px)" srcset="assets/desktop_1.webp">
+    <img src="assets/mobile_1.webp" alt="" class="w-full">
   </picture>
   <picture>
-    <source media="(min-width: 640px)" srcset="assets/desktop_2_sm.jpg">
-    <img src="assets/mobile_2_sm.jpg" alt="" class="w-full">
+    <source media="(min-width: 640px)" srcset="assets/desktop_2.webp">
+    <img src="assets/mobile_2.webp" alt="" class="w-full">
   </picture>
 
 
   <!-- ===== COUNTDOWN ===== -->
-  <section class="relative flex flex-col items-center gap-4 px-6 pt-12 pb-16 text-countdown-text text-center overflow-hidden" style="background: linear-gradient(to bottom, transparent, #f7e5ff)">
+  <section class="hidden relative flex flex-col items-center gap-4 px-6 pt-12 pb-16 text-countdown-text text-center overflow-hidden" style="background: linear-gradient(to bottom, transparent, #f7e5ff)">
     <!-- Title -->
     <div class="flex flex-col items-center gap-2">
       <p class="text-[20px] font-semibold leading-[1.2] tracking-[-0.4px] opacity-80">
@@ -212,22 +212,22 @@
 
   <!-- Progressive Image Loading: sm → lg -->
   <script>
-    (function() {
-      document.querySelectorAll('.section-1').forEach(function(picture) {
-        var img = picture.querySelector('img');
-        var source = picture.querySelector('source');
-        // Upgrade mobile img src (sm → lg)
-        var mobileLg = new Image();
-        mobileLg.onload = function() { img.src = mobileLg.src; };
-        mobileLg.src = img.getAttribute('src').replace('_sm.', '_lg.');
-        // Upgrade desktop source srcset (sm → lg)
-        if (source) {
-          var desktopLg = new Image();
-          desktopLg.onload = function() { source.srcset = desktopLg.src; };
-          desktopLg.src = source.getAttribute('srcset').replace('_sm.', '_lg.');
-        }
-      });
-    })();
+    // (function() {
+    //   document.querySelectorAll('.section-1').forEach(function(picture) {
+    //     var img = picture.querySelector('img');
+    //     var source = picture.querySelector('source');
+    //     // Upgrade mobile img src (sm → lg)
+    //     var mobileLg = new Image();
+    //     mobileLg.onload = function() { img.src = mobileLg.src; };
+    //     mobileLg.src = img.getAttribute('src').replace('_sm.', '_lg.');
+    //     // Upgrade desktop source srcset (sm → lg)
+    //     if (source) {
+    //       var desktopLg = new Image();
+    //       desktopLg.onload = function() { source.srcset = desktopLg.src; };
+    //       desktopLg.src = source.getAttribute('srcset').replace('_sm.', '_lg.');
+    //     }
+    //   });
+    // })();
   </script>
 
   <!-- JavaScript -->
