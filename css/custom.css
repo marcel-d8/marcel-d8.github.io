@@ -129,6 +129,8 @@ input[type="checkbox"] {
   text-align: center;
   margin: 0;
   max-width: 90%;
+  pointer-events: auto;
+  user-select: text;
 }
 
 .hero-subtitle {
@@ -138,6 +140,8 @@ input[type="checkbox"] {
   line-height: 1.46;
   text-align: center;
   margin: 0;
+  pointer-events: auto;
+  user-select: text;
 }
 
 /* ===== Text Overlay: CTA Section ===== */
@@ -171,6 +175,8 @@ input[type="checkbox"] {
   gap: 2.1vw;
   text-align: center;
   color: #8e1f0b;
+  pointer-events: auto;
+  user-select: text;
 }
 
 .cta-text-light {
@@ -196,6 +202,8 @@ input[type="checkbox"] {
   letter-spacing: -0.02em;
   text-align: center;
   margin: 0;
+  pointer-events: auto;
+  user-select: text;
 }
 
 /* ===== Desktop Overrides (640px+) ===== */
